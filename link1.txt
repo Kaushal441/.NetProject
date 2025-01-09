@@ -1,0 +1,30 @@
+git commit
+git status
+git log
+git revert o096x34
+git checkout -b branch1
+nano
+git add file.txt
+git checkout -b dbconn
+nano add
+git checkout main
+git merge branch1
+git merge dbconn
+
+
+chmod +x file.sh
+./file.sh
+
+sudo docker pull ubuntu
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo docker ps
+sudo docker images
+
+sudo docker httpd
+sudo docker run  -dit --name web1 -p 8000:80 httpd
+sudo nano index.html
+sudo docker cp index.html web1:/user/local/apache/htdocs
+sudo docker start web1
+
+
