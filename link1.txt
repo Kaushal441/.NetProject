@@ -28,3 +28,49 @@ sudo docker cp index.html web1:/user/local/apache/htdocs
 sudo docker start web1
 
 
+#!/bin/bash
+
+# Get the number of rows from the user
+read -p "Enter the number of rows: " rows
+
+# Outer loop for rows
+for ((i=1; i<=rows; i++)); do
+  # Inner loop for columns
+  for ((j=1; j<=i; j++)); do
+    echo -n "* "
+  done
+  echo ""
+done
+
+# Outer loop for rows in reverse order
+for ((i=rows-1; i>=1; i--)); do
+  # Inner loop for columns in reverse order
+  for ((j=1; j<=i; j++)); do
+    echo -n "* "
+  done
+  echo ""
+done
+
+
+#!/bin/bash
+
+# Get the number from the user
+read -p "Enter a number: " num
+
+# Check if the number is less than or equal to 1
+if [ "$num" -le 1 ]; then
+  echo "$num is not prime"
+  exit 0
+fi
+
+# Check for divisibility from 2 to the square root of the number
+for ((i=2; i*i<=num; i++)); do
+  if [ $((num%i)) -eq 0 ]; then
+    echo "$num is not prime"
+    exit 0
+  fi
+done
+
+# If no divisors found, the number is prime
+echo "$num is prime"
+
